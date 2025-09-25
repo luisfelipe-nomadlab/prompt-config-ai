@@ -81,6 +81,23 @@ O prompt tem como objetivo configurar o modelo Gemini 2.5 Flash para atuar como 
 | **stop_sequences**     | `["###"]`                              | Útil para separar blocos de resposta (ex.: exercícios, conclusões).                       |
 | **response_mime_type** | `"text/plain"` ou `"application/json"` | Dependendo da necessidade de resposta estruturada.                                        |
 
+## Justificativas técnicas e salvaguardas
+
+1. Baixa temperatura (0.0–0.2) diminui a chance de geração errática ou inventiva.
+2. top_p = 0.9 permite algum grau de diversidade, mas dentro de limites seguros.
+3. No model card do Gemini 2.5 Flash, o top_k é fixado em 64 (o próprio modelo considera os 64 tokens mais prováveis) 
+Google Cloud
++1
+4. O modelo permite ativação de “thinking” controlada via parâmetro, de modo que ele raciocine antes de responder. Esse controle ajuda a evitar saltos sem fundamento. 
+Google Developers Blog
++1
+5. Documentação oficial informa que o modelo pode “grounding with Google Search” (em contextos permitidos) para embasar respostas factuais. 
+Google Cloud
++1
+6. O modelo card alerta sobre limitações e possíveis desvios, logo o prompt de sistema deve incluir auto-limitações (quando incerto) para evitar alucinações. 
+Google Cloud Storage
++1
+
 ## Diretrizes de Resposta
 
 1. Tom de voz
@@ -98,3 +115,4 @@ O prompt tem como objetivo configurar o modelo Gemini 2.5 Flash para atuar como 
 
 4. Evitar alucinações
   - Se a informação não estiver disponível → responder claramente: “Não tenho dados suficientes para afirmar isso”.
+
