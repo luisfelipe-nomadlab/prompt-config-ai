@@ -25,21 +25,21 @@
 
 **Limites de tokens:**
 - **Entrada (input tokens)**
-Valor ideal prático: até 1.000 tokens
-Justificativa:
-- Em Data Science, geralmente você envia instruções + amostra de dataset.
-- Mandar o dataset inteiro pode ser pesado e desnecessário. Melhor resumir (ex.: estatísticas descritivas e pequenas amostra).
-- Com ~1K tokens, você já consegue mandar prompt detalhado + dados suficientes para análises ricas.
-- Isso também melhora a latência (respostas mais rápidas) e reduz custo.
+    Valor ideal prático: até 1.000 tokens
+    Justificativa:
+    - Em Data Science, geralmente você envia instruções + amostra de dataset.
+    - Mandar o dataset inteiro pode ser pesado e desnecessário. Melhor resumir (ex.: estatísticas descritivas e pequenas amostra).
+    - Com ~1K tokens, você já consegue mandar prompt detalhado + dados suficientes para análises ricas.
+    - Isso também melhora a latência (respostas mais rápidas) e reduz custo.
 
 - **Saída (output tokens):**
-Valor ideal prático: entre 1.000 e 2.000 tokens
-Justificativa:
-- Respostas muito longas (ex.: 10k+ tokens) em Flash podem perder foco e objetividade.
-- Para ensino/aprendizado, uma resposta ideal tem:
-- Explicação do conceito (300–500 tokens).
-- Exemplos em código (300–500 tokens).
-- Reflexões e exercícios propostos (200–300 tokens).
+    Valor ideal prático: entre 1.000 e 2.000 tokens
+    Justificativa:
+    - Respostas muito longas (ex.: 10k+ tokens) em Flash podem perder foco e objetividade.
+    - Para ensino/aprendizado, uma resposta ideal tem:
+    - Explicação do conceito (300–500 tokens).
+    - Exemplos em código (300–500 tokens).
+    - Reflexões e exercícios propostos (200–300 tokens).
 
 ## Objetivo do Prompt
 
